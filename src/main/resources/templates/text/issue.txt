@@ -1,0 +1,9 @@
+The following protections were added to the '[(${default_branch_name})]' branch of the repository:
+
+[# th:each="protection : ${branch_protections}"]
+  - [(${protection})]
+[/]
+
+@ravithallam
+
+For more information, please see: https://github.com/org-apex/github-repo-auto-protect

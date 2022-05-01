@@ -1,0 +1,4 @@
+thymeleaf=3.0.15.RELEASE
+jdk=11
+github-api=1.8
+spring-boot=2.6

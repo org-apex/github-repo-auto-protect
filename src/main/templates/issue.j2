@@ -1,0 +1,9 @@
+:shield: The following protections were added to the {{ default_branch_name }} branch of the repository:
+
+{% for protection in branch_protections %}
+- {{ protection }}
+{% endfor %}
+
+@ravithallam
+
+For more information, please see: https://github.com/org-apex/github-repo-auto-protect
