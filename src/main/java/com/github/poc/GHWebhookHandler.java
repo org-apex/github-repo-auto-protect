@@ -34,7 +34,7 @@ import java.util.Optional;
 public class GHWebhookHandler extends FunctionInvoker<String, String> {
 
 	// TODO: Externalize the PAT Token.
-	static final String OATUH_KEY = "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";
+	static final String OATUH_KEY = "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";
 
 	/**
 	 * Azure function to handle Github webhook requests
