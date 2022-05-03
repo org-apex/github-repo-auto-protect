@@ -4,6 +4,8 @@
 package com.github.poc;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.kohsuke.github.GHOrganization;
@@ -17,7 +19,7 @@ import org.kohsuke.github.GitHubBuilder;
  */
 public class GHRepsitoryManager {
 	
-	static final String OATUH_KEY = "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";
+	static final String OATUH_KEY = "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";
 	static final String ORGANIZATION = "org-apex";
 	
 	/**
@@ -57,20 +59,50 @@ public class GHRepsitoryManager {
             e.printStackTrace();
         }
     }
+	
+
+	/**
+	 * createGitHubRepositoryOnaScale
+	 */
+	private static void createGitHubRepositoryOnaScale(String repoName) {
+		Timer timer = new Timer();
+		int begin = 0;
+		int timeInterval = 2000;
+		timer.schedule(new TimerTask() {
+		  int counter = 0;
+		   @Override
+		   public void run() {
+		       //call the method
+		       counter++;
+		       print(repoName, counter);
+		       if (counter >= 5){
+		         timer.cancel();
+		       }
+		   }
+		}, begin, timeInterval);
+    }
+		
+
+	private static void print(String repoName, int counter) {
+		String updatedRepoName = repoName + counter;
+		createGitHubRepository(updatedRepoName);
+        System.out.println(repoName + counter + " created at : " + new java.util.Date());
+    }
+ 
+
+	
     /**
      * Main function
      * @param args
      */
     public static void main(String args[]) {
-    	int length = 10;
-	    boolean useLetters = true;
-	    boolean useNumbers = false;
 	    // Generate random repository name
-	    String repoName = "apex-repo-" + RandomStringUtils.random(length, useLetters, useNumbers);
+	    String repoName = "apex-repo-repository";
 	    System.out.println("REPO Name: " + repoName);
-    	createGitHubRepository(repoName);
+    	//createGitHubRepository(repoName);
     	//repoName = "apex-repo-HiEQrqeJJj";
     	//archiveGitHubRepository(repoName);
+	    createGitHubRepositoryOnaScale(repoName);
     }
 
 }
