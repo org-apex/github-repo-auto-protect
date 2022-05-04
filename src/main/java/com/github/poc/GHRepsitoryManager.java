@@ -19,7 +19,7 @@ import org.kohsuke.github.GitHubBuilder;
  */
 public class GHRepsitoryManager {
 	
-	static final String OATUH_KEY = "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";
+	static final String OATUH_KEY = "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";
 	static final String ORGANIZATION = "org-apex";
 	
 	/**
